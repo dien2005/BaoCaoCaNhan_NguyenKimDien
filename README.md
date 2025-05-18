@@ -65,7 +65,7 @@ Báo cáo này được thực hiện nhằm:
  - Nếu là trạng thái đích → trả về lời giải.  
  - Nếu không → sinh các trạng thái kề và thêm vào cuối hàng đợi (nếu chưa từng duyệt).
 3. Nếu hàng đợi rỗng mà chưa đến đích → không có lời giải.
-
+![BFS](./GIF/BFS.gif)
 ### b) DFS - Depth-First Search
 
 1. Khởi tạo ngăn xếp (stack) chứa trạng thái ban đầu.  
