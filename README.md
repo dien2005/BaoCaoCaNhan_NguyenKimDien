@@ -66,6 +66,7 @@ Báo cáo này được thực hiện nhằm:
  - Nếu không → sinh các trạng thái kề và thêm vào cuối hàng đợi (nếu chưa từng duyệt).
 3. Nếu hàng đợi rỗng mà chưa đến đích → không có lời giải.
 ![BFS](./GIF/BFS.gif)
+
 ### b) DFS - Depth-First Search
 
 1. Khởi tạo ngăn xếp (stack) chứa trạng thái ban đầu.  
@@ -74,6 +75,7 @@ Báo cáo này được thực hiện nhằm:
  - Nếu là trạng thái đích → trả về lời giải.  
  - Nếu không → sinh các trạng thái kề và thêm vào ngăn xếp (ưu tiên đẩy sau để xử lý trước).
 3. Nếu ngăn xếp rỗng mà chưa tới đích → không có lời giải.
+![DFS](./GIF/DFS.gif)
 
 ### c) UCS - Uniform Cost Search
 
@@ -82,12 +84,14 @@ Báo cáo này được thực hiện nhằm:
  - Lấy nút có `g(n)` nhỏ nhất.  
  - Nếu là đích → trả về lời giải.  
  - Sinh các trạng thái kề, cập nhật `g(n)` và thêm vào hàng đợi nếu chưa duyệt hoặc có chi phí tốt hơn.
+![UCS](./GIF/UCS.gif)
 
 ### d) IDDFS - Iterative Deepening DFS
 
 1. Giống DFS nhưng giới hạn độ sâu.  
 2. Nếu tìm thấy trạng thái đích trong giới hạn → trả về lời giải.  
 3. Nếu không → thử lại với độ sâu lớn hơn.
+![IDDFS](./GIF/IDDFS.gif)
 
 ---
 
@@ -104,6 +108,7 @@ Báo cáo này được thực hiện nhằm:
  - Lấy trạng thái có `h(n)` nhỏ nhất.  
  - Nếu là đích → trả về lời giải.  
  - Nếu không → sinh trạng thái kề và thêm vào hàng đợi.
+![Greedy](./GIF/Greedy.gif)
 
 ### b) A* Search
 
@@ -115,6 +120,7 @@ Báo cáo này được thực hiện nhằm:
    - Cập nhật `g(n)`
    - Tính `f(n) = g(n) + h(n)`
    - Nếu chưa duyệt hoặc tốt hơn → thêm vào hàng đợi
+![A_star](./GIF/A_star.gif)
 
 ### c) IDA* - Iterative Deepening A*
 
@@ -124,6 +130,7 @@ Báo cáo này được thực hiện nhằm:
  - Nếu tìm thấy → trả lời giải.  
  - Nếu không, cập nhật `f_limit = f_min` để lặp tiếp.
 3. Nếu không còn trạng thái mở rộng → không có lời giải.
+![IDA_star](./GIF/IDA_star.gif)
 
 ---
 
@@ -143,6 +150,7 @@ Báo cáo này được thực hiện nhằm:
  - Sinh các trạng thái kề.
  - Nếu tồn tại trạng thái có giá trị heuristic tốt hơn → chuyển sang nó.
  - Nếu không → dừng (đạt cực trị cục bộ).
+![Simple_Hill](./GIF/Simple_Hill.gif)
 
 ### b) Steepest-Ascent Hill Climbing
 
@@ -152,6 +160,7 @@ Báo cáo này được thực hiện nhằm:
  - Chọn trạng thái tốt nhất theo heuristic.
  - Nếu tốt hơn trạng thái hiện tại → chuyển sang đó.
  - Nếu không → dừng.
+![Steepest_Hill](./GIF/Steepest_Hill.gif)
 
 ### c) Stochastic Hill Climbing
 
@@ -160,6 +169,7 @@ Báo cáo này được thực hiện nhằm:
  - Sinh ngẫu nhiên một vài trạng thái kề.
  - Nếu có trạng thái kề tốt hơn hiện tại → chọn ngẫu nhiên một trong số đó để di chuyển.
  - Nếu không có trạng thái tốt hơn → dừng.
+![Stochastic_Hill](./GIF/Stochastic_Hill.gif)
 
 ### d) Simulated Annealing
 
@@ -170,6 +180,7 @@ Báo cáo này được thực hiện nhằm:
  - Nếu ΔE < 0 → chấp nhận trạng thái mới (tốt hơn).
  - Nếu ΔE > 0 → chấp nhận với xác suất e^(-ΔE / T).
  - Giảm nhiệt độ T theo thời gian (theo lịch làm lạnh).
+![Simulated](./GIF/Simulated.gif)
 
 ### e) Local Beam Search
 
@@ -178,6 +189,7 @@ Báo cáo này được thực hiện nhằm:
  - Từ tất cả K trạng thái, sinh tất cả trạng thái kề.
  - Chọn K trạng thái tốt nhất từ tập tất cả trạng thái con.
  - Nếu một trạng thái là đích → trả về lời giải.
+![Beam](./GIF/Beam.gif)
 
 ### f) Genetic Algorithm
 
@@ -188,6 +200,7 @@ Báo cáo này được thực hiện nhằm:
  - Áp dụng **đột biến** ngẫu nhiên trên cá thể con.
  - Hình thành quần thể mới từ cá thể con.
  - Nếu có cá thể đạt mục tiêu → trả về.
+![Genetic](./GIF/Genetic.gif)
 
 ---
 
@@ -207,6 +220,7 @@ Báo cáo này được thực hiện nhằm:
 4. Với mỗi nút con, gọi đệ quy And-Or Search.
 5. Tạo node AND nếu cần tất cả con phải thành công, hoặc node OR nếu chỉ cần một con thành công.
 6. Trả về cây tìm kiếm kết hợp các node AND-OR.
+![AndOr](./GIF/AndOr.gif)
 
 ### b) Belief-State Search
 
@@ -215,6 +229,7 @@ Báo cáo này được thực hiện nhằm:
  - Xác định các hành động có thể.
  - Dựa vào hành động và quan sát, cập nhật belief state mới.
  - Kiểm tra nếu belief state mới thỏa điều kiện goal.
+![Belife](./GIF/Belife.gif)
 
 3. Tìm đường đi qua các belief state tới goal.
 
@@ -237,6 +252,7 @@ Báo cáo này được thực hiện nhằm:
  - Nếu miền Xi rỗng, trả về thất bại.
  - Thêm tất cả cung (Xk, Xi) vào Q, k là các biến liên quan đến Xi.
 3. Trả về thành công nếu không có miền biến rỗng.
+![AC3](./GIF/AC3.gif)
 
 ### b) Thuật toán Kiểm thử (Testing Algorithms)
 
@@ -244,6 +260,7 @@ Báo cáo này được thực hiện nhằm:
 2. Kiểm tra các ràng buộc liên quan đến biến đó.
 3. Nếu ràng buộc thỏa mãn, tiếp tục với biến kế tiếp.
 4. Nếu không, quay lui hoặc thay đổi giá trị.
+![KiemThu](./GIF/KiemThu.gif)
 
 ### Thuật toán BackTracking
 
@@ -253,6 +270,7 @@ Báo cáo này được thực hiện nhằm:
 4. Nếu thỏa, tiếp tục với biến kế tiếp.
 5. Nếu không thỏa, quay lui (backtrack) để thay đổi giá trị biến trước đó.
 6. Lặp lại đến khi tìm được nghiệm hoặc hết khả năng gán.
+![BackTracking](./GIF/BackTracking.gif)
 
 ---
 
@@ -276,6 +294,7 @@ Báo cáo này được thực hiện nhằm:
 4. Tính toán gradient của hàm mục tiêu (expected reward) dựa trên dữ liệu thu thập.
 5. Cập nhật tham số θ theo hướng gradient tăng.
 6. Lặp lại các bước trên cho đến khi hội tụ.
+![Reinforce](./GIF/Reinforce.gif)
 
 ### b) Thuật toán Q-learning
 
@@ -286,7 +305,7 @@ Báo cáo này được thực hiện nhằm:
  - Cập nhật Q(s,a)
  - Cập nhật trạng thái s = s'.
 3. Lặp lại cho đến khi bảng Q hội tụ.
-
+![Qlearning](./GIF/Qlearning.gif)
 
 ---
 ## Kết luận
